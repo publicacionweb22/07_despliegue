@@ -1,0 +1,17 @@
+
+# HTID:20098336: DO NOT REMOVE OR MODIFY THIS LINE AND THE LINES BELOW
+# php_value display_errors 1
+# DO NOT REMOVE OR MODIFY THIS LINE AND THE LINES ABOVE HTID:20098336:
+Options -Indexes -MultiViews
+
+DirectorySlash Off
+
+RewriteEngine On
+
+RewriteCond %{DOCUMENT_ROOT}%{REQUEST_URI}.html -f
+RewriteRule !\.\w{2,4}$ %{REQUEST_URI}.html [L]
+
+RewriteCond %{DOCUMENT_ROOT}%{REQUEST_URI}/index.html -f
+RewriteRule !\.\w{2,4}$ %{REQUEST_URI}/index.html [L]
+
+ErrorDocument 404 /pagina404.html
